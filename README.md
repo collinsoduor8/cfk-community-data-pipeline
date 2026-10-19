@@ -48,17 +48,23 @@ def clean_currency_col(val):
         return float(val)
     except:
         return np.nan
-2. Standardizing Categorical Mappings
+
+
+for name, df in operational_tables.items():
+    df['RecordStatus'] = df['BeneficiaryID'].apply(
+        lambda x: 'Registered Member' if x in registered_ids else 'Unregistered / Walk-in'
+    )
+### 2. Standardizing Categorical Mappings
+
 Categorical inconsistencies are programmatically mapped to clean, uniform standards:
+* **Gender Normalization:** Unified variations (`m`, `f`, `FEMALE`, etc.) into clean standard titles.
+* **Boolean Conversion:** Mapped messy string/numeric boolean flags (`YES`, `Y`, `1`, `True`, `0`) cleanly into true Python booleans (`True`/`False`).
 
-Gender Normalization: Unified variations (m, f, FEMALE, etc.) into clean standard titles.
+### 3. Automated Cross-Table Auditing (`RecordStatus` Flag)
 
-Boolean Conversion: Mapped messy string/numeric boolean flags (YES, Y, 1, True, 0) cleanly into true Python booleans (True/False).
-
-3. Automated Cross-Table Auditing (RecordStatus Flag)
 To catch data anomalies where operational activities or health visits reference IDs not present in the master beneficiary registry, the pipeline dynamically flags records:
 
-Python
+```python
 registered_ids = set(beneficiaries['BeneficiaryID'])
 operational_tables = {
     'Health Visits': health_visits,
