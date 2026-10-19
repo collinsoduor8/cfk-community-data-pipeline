@@ -54,6 +54,7 @@ for name, df in operational_tables.items():
     df['RecordStatus'] = df['BeneficiaryID'].apply(
         lambda x: 'Registered Member' if x in registered_ids else 'Unregistered / Walk-in'
     )
+
 ### 2. Standardizing Categorical Mappings
 
 Categorical inconsistencies are programmatically mapped to clean, uniform standards:
