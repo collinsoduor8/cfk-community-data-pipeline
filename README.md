@@ -62,10 +62,10 @@ Master Analytical Dataset (MAD) Construction: Performed left-joins anchored on B
 Analysis of the Master Analytical Dataset reveals pronounced spatial variations across the six target communities (
 N=120).
 
-Village Population and Credit Distribution Breakdown:
+*Village Population and Credit Distribution Breakdown:
 Mashimoni: Houses the largest population cohort with 23 beneficiaries (20.35%), accounting for 740,000 KES in total borrowing (16.46%).
 
-Laini Saba: Comprising 22 beneficiaries (19.47%), Laini Saba leads all communities in credit scale, driving 1,110,000 KES in total borrowing (24.69% of the aggregate capital pool) alongside high program activity participation.
+*Laini Saba: Comprising 22 beneficiaries (19.47%), Laini Saba leads all communities in credit scale, driving 1,110,000 KES in total borrowing (24.69% of the aggregate capital pool) alongside high program activity participation.
 
 Lindi: Matches Laini Saba with 22 beneficiaries (19.47%), maintaining significant borrowing of 905,000 KES (20.13%) alongside elevated healthcare demands (averaging 1.82 health visits per resident).
 
