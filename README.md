@@ -80,3 +80,75 @@ for name, df in operational_tables.items():
         lambda x: 'Registered Member' if x in registered_ids else 'Unregistered / Walk-in'
     )
 
+
+Socio-Economic Baseline & Cross-Domain Analysis Report
+Assessment Period: 30-Day Synthesis
+
+Scope: Multi-Village Community Study (
+N=120 Beneficiaries)
+
+Author: Data Analyst / Scientist
+
+1. Executive Summary
+This report delivers a comprehensive exploratory analysis of socio-economic, health, and financial indicators across 120 community beneficiaries spanning six distinct villages (Gatwekera, Laini Saba, Lindi, Mashimoni, Silanga, and Soweto East). By merging fragmented operational datasets into a unified Master Analytical Dataset (MAD), this study uncovers critical intersections between household debt, health clinic utilization, and community program engagement.
+
+Key Highlights:
+High Financial Participation: 71.7% of all beneficiaries maintain active loan portfolios through local SACCO structures.
+
+Geographic Disparities: Credit intensity is heavily localized, with Laini Saba acting as the primary financial hub, capturing 24.69% of total borrowed capital despite housing 19.47% of the population.
+
+The Health-Debt Nexus: Statistical correlation analysis reveals a positive link (
+r=0.272) between outstanding loan balances and health clinic visits, indicating that healthcare needs and financial stress frequently compound at the household level.
+
+2. Introduction & Background
+Community development initiatives often suffer from data fragmentation, where health clinics, microfinance programs, and social activities operate in silos. This 30-day assessment was initiated to establish a unified view of community welfare. By bridging cross-domain data sources, this report aims to provide local leaders and stakeholders with empirical evidence to guide resource allocation, target vulnerable cohorts, and optimize program delivery.
+
+3. Methodology & Data Pipeline
+To overcome data siloing and prevent row-duplication errors ("row explosion") common in multi-table relational data, the analysis followed a rigorous data engineering pipeline:
+
+Relational Ingestion & Cleaning: Standardized and cleaned five core operational tables: Beneficiaries, Health Visits, Program Activities, SACCO Loans, and Budgets.
+
+Aggregated Feature Engineering: Using Pandas groupby with named aggregation (.agg), individual event logs (e.g., multiple clinic visits or separate loan records) were compressed down to exact individual-level summary metrics per beneficiary (TotalHealthVisits, TotalLoans, TotalBorrowed_KES, TotalOutstanding_KES, TotalActivities).
+
+Master Analytical Dataset (MAD) Construction: Performed left-joins anchored on BeneficiaryID against the base demographic table, resulting in a clean, non-duplicated 
+(120,15) Master Analytical Dataset. Missing activity and financial metrics for non-participants were systematically zero-filled to preserve statistical integrity.
+
+4. Exploratory & Geographic Analysis
+Analysis of the Master Analytical Dataset reveals pronounced spatial variations across the six target communities (
+N=120).
+
+Village Population and Credit Distribution Breakdown:
+Mashimoni: Houses the largest population cohort with 23 beneficiaries (20.35%), accounting for 740,000 KES in total borrowing (16.46%).
+
+Laini Saba: Comprising 22 beneficiaries (19.47%), Laini Saba leads all communities in credit scale, driving 1,110,000 KES in total borrowing (24.69% of the aggregate capital pool) alongside high program activity participation.
+
+Lindi: Matches Laini Saba with 22 beneficiaries (19.47%), maintaining significant borrowing of 905,000 KES (20.13%) alongside elevated healthcare demands (averaging 1.82 health visits per resident).
+
+Gatwekera: Accounts for 20 beneficiaries (17.70%) with 835,000 KES in borrowing (18.58%).
+
+Soweto East: Represents 19 beneficiaries (16.81%) with 640,000 KES in borrowing (14.24%), while recording the highest average health visits per resident (1.84).
+
+Silanga: A micro-community of 7 beneficiaries (6.19%), registering proportional totals with 265,000 KES in borrowing (5.90%).
+
+5. Statistical Validation & Cross-Domain Insights
+To evaluate structural relationships across domains, a correlation matrix and corresponding heatmap were analyzed across numerical features:
+
+The Credit-Health Nexus (
+r=0.272): A positive correlation exists between Total Outstanding KES (and total loans) and Total Health Visits. This quantitative link validates that households managing heavier debt burdens also experience or require higher health service utilization, signaling compounding vulnerabilities.
+
+Internal Financial Leverage (
+r=0.831): A strong positive correlation between total borrowed funds and outstanding balances indicates persistent credit exposure rather than rapid revolving turnover across the population.
+
+Program Independence (
+r≈−0.01 to 
+0.14): Community activity participation operates independently of immediate financial debt and age metrics, suggesting that social program engagement reaches participants across diverse financial strata without direct friction from credit obligations.
+
+6. Strategic Recommendations & Action Plan
+Based on empirical findings from the 30-day assessment, the following actions are recommended for stakeholders:
+
+Targeted Health & Financial Relief in Lindi & Soweto East: Given the convergence of high clinic utilization and substantial debt, introduce integrated financial literacy programs alongside health subsidies to prevent medical debt spirals.
+
+Credit Risk Management in Laini Saba: Since Laini Saba anchors nearly a quarter of all borrowed capital, establish localized advisory services to support healthy portfolio turnover and repayment tracking.
+
+Equitable Program Expansion: Leverage the independence of community activities (
+r≈0) to utilize social programs as engagement channels for vulnerable populations in Silanga and Mashimoni who may be isolated from formal credit or health networks.
