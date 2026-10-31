@@ -26,7 +26,7 @@ The pipeline ingests and cleans 5 core operational datasets:
 5. Project Budgets (`CFK2_ProjectBudgets.csv`): 100 financial lines detailing donor allocations, actual spends, utilization percentages, and audit statuses.
 
 
-## Socio-Economic Baseline & Cross-Domain Analysis Report
+# Socio-Economic Baseline & Cross-Domain Analysis Report
 Assessment Period: 30-Day Synthesis
 
 Scope: Multi-Village Community Study (
@@ -78,22 +78,22 @@ Mashimoni: Houses the largest population cohort with 23 beneficiaries (20.35%), 
 ## 5. Statistical Validation & Cross-Domain Insights
 To evaluate structural relationships across domains, a correlation matrix and corresponding heatmap were analyzed across numerical features:
 
-The Credit-Health Nexus (
+* The Credit-Health Nexus (
 r=0.272): A positive correlation exists between Total Outstanding KES (and total loans) and Total Health Visits. This quantitative link validates that households managing heavier debt burdens also experience or require higher health service utilization, signaling compounding vulnerabilities.
 
-Internal Financial Leverage (
+* Internal Financial Leverage (
 r=0.831): A strong positive correlation between total borrowed funds and outstanding balances indicates persistent credit exposure rather than rapid revolving turnover across the population.
 
-Program Independence (
+* Program Independence (
 r≈−0.01 to 
 0.14): Community activity participation operates independently of immediate financial debt and age metrics, suggesting that social program engagement reaches participants across diverse financial strata without direct friction from credit obligations.
 
 ## 6. Strategic Recommendations & Action Plan
 Based on empirical findings from the 30-day assessment, the following actions are recommended for stakeholders:
 
-Targeted Health & Financial Relief in Lindi & Soweto East: Given the convergence of high clinic utilization and substantial debt, introduce integrated financial literacy programs alongside health subsidies to prevent medical debt spirals.
+1. Targeted Health & Financial Relief in Lindi & Soweto East: Given the convergence of high clinic utilization and substantial debt, introduce integrated financial literacy programs alongside health subsidies to prevent medical debt spirals.
 
-Credit Risk Management in Laini Saba: Since Laini Saba anchors nearly a quarter of all borrowed capital, establish localized advisory services to support healthy portfolio turnover and repayment tracking.
+2. Credit Risk Management in Laini Saba: Since Laini Saba anchors nearly a quarter of all borrowed capital, establish localized advisory services to support healthy portfolio turnover and repayment tracking.
 
-Equitable Program Expansion: Leverage the independence of community activities (
+3. Equitable Program Expansion: Leverage the independence of community activities (
 r≈0) to utilize social programs as engagement channels for vulnerable populations in Silanga and Mashimoni who may be isolated from formal credit or health networks.
