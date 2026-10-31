@@ -26,63 +26,6 @@ The pipeline ingests and cleans 5 core operational datasets:
 5. Project Budgets (`CFK2_ProjectBudgets.csv`): 100 financial lines detailing donor allocations, actual spends, utilization percentages, and audit statuses.
 
 
----
-
-## Key Pipeline Features & Code Highlights
-
-### 1. Robust Modular Helper Functions
-
-Instead of repetitive code, custom helper functions handle standard cleaning tasks globally:
-```python
-def clean_text(df, columns):
-    for col in columns:
-        if col in df.columns:
-            df[col] = df[col].str.replace('&nbsp;', ' ', regex=True).str.strip().str.title()
-    return df
-
-def clean_currency_col(val):
-    if pd.isna(val):
-        return np.nan
-    if isinstance(val, str):
-        val = val.replace('KES', '').replace(',', '').strip()
-    try:
-        return float(val)
-    except:
-        return np.nan
-
-
-for name, df in operational_tables.items():
-    df['RecordStatus'] = df['BeneficiaryID'].apply(
-        lambda x: 'Registered Member' if x in registered_ids else 'Unregistered / Walk-in'
-    )
-
-----
-
-### 2. Standardizing Categorical Mappings
-
-Categorical inconsistencies are programmatically mapped to clean, uniform standards:
-* **Gender Normalization:** Unified variations (`m`, `f`, `FEMALE`, etc.) into clean standard titles.
-* **Boolean Conversion:** Mapped messy string/numeric boolean flags (`YES`, `Y`, `1`, `True`, `0`) cleanly into true Python booleans (`True`/`False`).
-
-### 3. Automated Cross-Table Auditing (`RecordStatus` Flag)
-
-To catch data anomalies where operational activities or health visits reference IDs not present in the master beneficiary registry, the pipeline dynamically flags records:
-
-```python
-registered_ids = set(beneficiaries['BeneficiaryID'])
-operational_tables = {
-    'Health Visits': health_visits,
-    'Program Activities': activities,
-    'SACCO Loans': loans
-}
-
-for name, df in operational_tables.items():
-    df['RecordStatus'] = df['BeneficiaryID'].apply(
-        lambda x: 'Registered Member' if x in registered_ids else 'Unregistered / Walk-in'
-    )
-
-
-
 # Socio-Economic Baseline & Cross-Domain Analysis Report
 Assessment Period: 30-Day Synthesis
 
