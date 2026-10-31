@@ -62,18 +62,18 @@ Master Analytical Dataset (MAD) Construction: Performed left-joins anchored on B
 Analysis of the Master Analytical Dataset reveals pronounced spatial variations across the six target communities (
 N=120).
 
-*Village Population and Credit Distribution Breakdown:
+* Village Population and Credit Distribution Breakdown:
 Mashimoni: Houses the largest population cohort with 23 beneficiaries (20.35%), accounting for 740,000 KES in total borrowing (16.46%).
 
-*Laini Saba: Comprising 22 beneficiaries (19.47%), Laini Saba leads all communities in credit scale, driving 1,110,000 KES in total borrowing (24.69% of the aggregate capital pool) alongside high program activity participation.
+* Laini Saba: Comprising 22 beneficiaries (19.47%), Laini Saba leads all communities in credit scale, driving 1,110,000 KES in total borrowing (24.69% of the aggregate capital pool) alongside high program activity participation.
 
-Lindi: Matches Laini Saba with 22 beneficiaries (19.47%), maintaining significant borrowing of 905,000 KES (20.13%) alongside elevated healthcare demands (averaging 1.82 health visits per resident).
+* Lindi: Matches Laini Saba with 22 beneficiaries (19.47%), maintaining significant borrowing of 905,000 KES (20.13%) alongside elevated healthcare demands (averaging 1.82 health visits per resident).
 
-Gatwekera: Accounts for 20 beneficiaries (17.70%) with 835,000 KES in borrowing (18.58%).
+* Gatwekera: Accounts for 20 beneficiaries (17.70%) with 835,000 KES in borrowing (18.58%).
 
-Soweto East: Represents 19 beneficiaries (16.81%) with 640,000 KES in borrowing (14.24%), while recording the highest average health visits per resident (1.84).
+* Soweto East: Represents 19 beneficiaries (16.81%) with 640,000 KES in borrowing (14.24%), while recording the highest average health visits per resident (1.84).
 
-Silanga: A micro-community of 7 beneficiaries (6.19%), registering proportional totals with 265,000 KES in borrowing (5.90%).
+* Silanga: A micro-community of 7 beneficiaries (6.19%), registering proportional totals with 265,000 KES in borrowing (5.90%).
 
 ## 5. Statistical Validation & Cross-Domain Insights
 To evaluate structural relationships across domains, a correlation matrix and corresponding heatmap were analyzed across numerical features:
