@@ -51,11 +51,11 @@ Community development initiatives often suffer from data fragmentation, where he
 ## 3. Methodology & Data Pipeline
 To overcome data siloing and prevent row-duplication errors ("row explosion") common in multi-table relational data, the analysis followed a rigorous data engineering pipeline:
 
-Relational Ingestion & Cleaning: Standardized and cleaned five core operational tables: Beneficiaries, Health Visits, Program Activities, SACCO Loans, and Budgets.
+1. Relational Ingestion & Cleaning: Standardized and cleaned five core operational tables: Beneficiaries, Health Visits, Program Activities, SACCO Loans, and Budgets.
 
-Aggregated Feature Engineering: Using Pandas groupby with named aggregation (.agg), individual event logs (e.g., multiple clinic visits or separate loan records) were compressed down to exact individual-level summary metrics per beneficiary (TotalHealthVisits, TotalLoans, TotalBorrowed_KES, TotalOutstanding_KES, TotalActivities).
+2. Aggregated Feature Engineering: Using Pandas groupby with named aggregation (.agg), individual event logs (e.g., multiple clinic visits or separate loan records) were compressed down to exact individual-level summary metrics per beneficiary (TotalHealthVisits, TotalLoans, TotalBorrowed_KES, TotalOutstanding_KES, TotalActivities).
 
-Master Analytical Dataset (MAD) Construction: Performed left-joins anchored on BeneficiaryID against the base demographic table, resulting in a clean, non-duplicated 
+3. Master Analytical Dataset (MAD) Construction: Performed left-joins anchored on BeneficiaryID against the base demographic table, resulting in a clean, non-duplicated 
 (120,15) Master Analytical Dataset. Missing activity and financial metrics for non-participants were systematically zero-filled to preserve statistical integrity.
 
 ## 4. Exploratory & Geographic Analysis
