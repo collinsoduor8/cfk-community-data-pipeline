@@ -26,7 +26,7 @@ The pipeline ingests and cleans 5 core operational datasets:
 5. Project Budgets (`CFK2_ProjectBudgets.csv`): 100 financial lines detailing donor allocations, actual spends, utilization percentages, and audit statuses.
 
 
-Socio-Economic Baseline & Cross-Domain Analysis Report
+## Socio-Economic Baseline & Cross-Domain Analysis Report
 Assessment Period: 30-Day Synthesis
 
 Scope: Multi-Village Community Study (
